@@ -103,5 +103,6 @@ There are lot of ways to achieve this whether individually or together.some othe
 - Content Delivery Network (CDN) - if the application serves static files (like images, CSS, JS), use a CDN like Cloudflare or AWS CloudFront to distribute this content globally and reduce the load on your servers.
 - Asynchronous Processing : it simply means we can work independently and in parallel. In other words, we don't have to wait for task A to be 100% complete before beginning task B. This is more akin to ordering takeout.suppose, we place a complete order including a meal, drink, and dessert, and  told to pick it up in 20 minutes. we are now free to use that time as we like.
 
+lastly,the run_task.py will immediately trigger the send_email_notification task from scheduler.tasks, and if your Celery worker is running, it will process the task and execute the job logic.
 
 ~ There are some of my other works you can visit : https://github.com/aDiTyA-2712
