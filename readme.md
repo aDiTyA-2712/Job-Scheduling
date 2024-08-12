@@ -27,37 +27,56 @@
 	- Jobs are executed according to the defined schedule, with their results and status updated in the database.
 	
 # To setup this Project
-step 1 : Download or clone the Repository
-step 2 : open with visual studio.
-step 3 : Go the the scheduler_proj folder where your project and app(sceduler here) exists and terminal.
-step 4 : install the neccessary packages which are required for this project
-		 write the command in the terminal like : pip install django djangorestframework celery redis , to install django, djangorestframework ,celery and redis.(Note : you can also install the packages one by one)
-step 5 : Now go to sceduler_proj/settings.py and see the database details(postgresql used here)
-step 6 : install pgAdmin and open it, and create a database named job(here its job but it can be anything) with user as 'postgres'.
-step 7 : now run two commands in the terminal one by one which are 
-			i.python manage.py makemigrations
-			ii.python manage.py migrate
-		this will setup up you database and create a table with details from models.py in your database.
-step 8 : Now run the commnand to test the service : python manage.py runserver
+- step 1 : Download or clone the Repository
 
-step 9 : Navigate to page http://127.0.0.1:8000/api/jobs/ (or http://localhost:8000/jobs/) to see(GET) the lists all available jobs.
-step 10 : you can also create a job(POST) with attributes like name ,interval, last run at, next run at and isactive
+- step 2 : open with visual studio.
+
+- step 3 : Go the the scheduler_proj folder where your project and app(sceduler here) exists and terminal.
+
+- step 4 : install the neccessary packages which are required for this project
+
+		 write the command in the terminal like : pip install django djangorestframework celery redis , to install django, djangorestframework ,celery and redis.(Note : you can also install the packages one by one)
+		 
+- step 5 : Now go to sceduler_proj/settings.py and see the database details(postgresql used here)
+
+- step 6 : install pgAdmin and open it, and create a database named job(here its job but it can be anything) with user as 'postgres'.
+
+- step 7 : now run two commands in the terminal one by one which are 
+
+			i.python manage.py makemigrations
+			
+			ii.python manage.py migrate
+			
+		this will setup up you database and create a table with details from models.py in your database.
+		
+- step 8 : Now run the commnand to test the service : python manage.py runserver
+
+- step 9 : Navigate to page http://127.0.0.1:8000/api/jobs/ (or http://localhost:8000/jobs/) to see(GET) the lists all available jobs.
+
+- step 10 : you can also create a job(POST) with attributes like name ,interval, last run at, next run at and isactive
+
 		  you can also use postman to create post request and get request.
+		  
 		  eg POST:  
+		  
 					{
 						"name": "testing job",
 						"interval": "weekly"
 					}
-step 11 : navigate to EP http://127.0.0.1:8000/api/jobs/1 (or http://localhost:8000/jobs/1) to see the detailed information about a specific job.
+					
+- step 11 : navigate to EP http://127.0.0.1:8000/api/jobs/1 (or http://localhost:8000/jobs/1) to see the detailed information about a specific job.
 
 
 # Scaling the microservice
 
 we can scale the service by many ways such as :
-1.Application architecture : we can breakdown the django(monilithic) application into microservices where each service should handle a specific functionality (e.g., job scheduling, user management, API gateway).This allows independent scaling of each component.
+
+1.Application architecture : 
+
+- we can breakdown the django(monilithic) application into microservices where each service should handle a specific functionality (e.g., job scheduling, user management, API gateway).This allows independent scaling of each component.
 
 2.Load Balancing : one of the most important concept to handle increased complexity is to use a load balancer which is used to increase the capacity and reliability of applications and distributes network or application traffic across a number of servers.The general architecture is :
-					client -> Load Balancer -> Instances
+					- client -> Load Balancer -> Instances
 	There are any types of load balancer based on functions, configurations , L4,L7 which we can perform				
 					
 	we can achieve this by number of ways such as round-robin algorithm, weighted round-robin algorithm, IP hash algorithm etc		
