@@ -75,29 +75,33 @@ we can scale the service by many ways such as :
 
 - we can breakdown the django(monilithic) application into microservices where each service should handle a specific functionality (e.g., job scheduling, user management, API gateway).This allows independent scaling of each component.
 
-2.Load Balancing : one of the most important concept to handle increased complexity is to use a load balancer which is used to increase the capacity and reliability of applications and distributes network or application traffic across a number of servers.The general architecture is :
+2.Load Balancing : 
+- one of the most important concept to handle increased complexity is to use a load balancer which is used to increase the capacity and reliability of applications and distributes network or application traffic across a number of servers.The general architecture is :
 					- client -> Load Balancer -> Instances
-	There are any types of load balancer based on functions, configurations , L4,L7 which we can perform				
+- There are any types of load balancer based on functions, configurations , L4,L7 which we can perform				
 					
-	we can achieve this by number of ways such as round-robin algorithm, weighted round-robin algorithm, IP hash algorithm etc		
+- we can achieve this by number of ways such as round-robin algorithm, weighted round-robin algorithm, IP hash algorithm etc		
 	
-	Round-robin : Round-robin is a simple technique for guaranteeing that every user gets a different server.
-	Least connection method : round-robin doesn’t account for the current load on a server, the least connection method does make this evaluation, and as a result, it often delivers better performance.
-	Hashing methods : Methods in this category make decisions based on various data from the incoming packet. This includes connection or header information, such as source/destination IP address, port number, URL, or domain name.
+	- Round-robin : Round-robin is a simple technique for guaranteeing that every user gets a different server.
+	- Least connection method : round-robin doesn’t account for the current load on a server, the least connection method does make this evaluation, and as a -  result, it often delivers better performance.
+	- Hashing methods : Methods in this category make decisions based on various data from the incoming packet. This includes connection or header information, such as source/destination IP address, port number, URL, or domain name.
 	
-3.Horizontal Scaling : it scales by adding/reducing computing nodes as the workload increases/decreases.That means , you can scale by adding more power (CPU, RAM) to an existing machine.usually it requires a load balancer, which is a middleware component in the standard three tier client-server architectural model. The load balancer is responsible for distributing user requests (load) among the various back-end systems/machines/nodes in the cluster.
+3.Horizontal Scaling : 
+- It scales by adding/reducing computing nodes as the workload increases/decreases.That means , you can scale by adding more power (CPU, RAM) to an existing machine.usually it requires a load balancer, which is a middleware component in the standard three tier client-server architectural model. The load balancer is responsible for distributing user requests (load) among the various back-end systems/machines/nodes in the cluster.
 	- we can implement a combination of Kubernetes' Horizontal Pod Autoscaling (HPA) and load balancing techniques.
 	- we can also use Amazon Elastic Load Balancer (ELB) to distribute traffic across multiple Availability Zones (AZs) and regions. ELB provides a highly 	    available and scalable load balancing solution that can handle large volumes of traffic.
 
-4.Auto-scaling: Auto scaling and load balancing are related because an application typically scales based on load balancing serving capacity. In other words, the serving capacity of the load balancer is one of several metrics (including cloud monitoring metrics and CPU utilization) that shapes the auto scaling policy.
+4.Auto-scaling: 
+- Auto scaling and load balancing are related because an application typically scales based on load balancing serving capacity. In other words, the serving capacity of the load balancer is one of several metrics (including cloud monitoring metrics and CPU utilization) that shapes the auto scaling policy.
 	- we can leverage Kubernetes' Horizontal Pod Autoscaling (HPA) feature. HPA automatically scales the number of replicas of pod based on the CPU utilization or other metrics.
 	
-5.Database Sharding : we can implement a combination of database sharding and load balancing techniques.Database sharding involves dividing the database into smaller, independent pieces called shards, each containing a portion of the data. This allows us to scale or db horizontally by adding more shards as needed.
+5.Database Sharding : 
+- we can implement a combination of database sharding and load balancing techniques.Database sharding involves dividing the database into smaller, independent pieces called shards, each containing a portion of the data. This allows us to scale or db horizontally by adding more shards as needed.
 
 There are lot of ways to achieve this whether individually or together.some others are :
-i.Indexing - It optimizes the database queries by creating indexes on frequently queried fields. This speeds up data retrieval.
-ii.Content Delivery Network (CDN) - if the application serves static files (like images, CSS, JS), use a CDN like Cloudflare or AWS CloudFront to distribute this content globally and reduce the load on your servers.
-iii.Asynchronous Processing : it simply means we can work independently and in parallel. In other words, we don't have to wait for task A to be 100% complete before beginning task B. This is more akin to ordering takeout.suppose, we place a complete order including a meal, drink, and dessert, and  told to pick it up in 20 minutes. we are now free to use that time as we like.
+-i.Indexing - It optimizes the database queries by creating indexes on frequently queried fields. This speeds up data retrieval.
+-ii.Content Delivery Network (CDN) - if the application serves static files (like images, CSS, JS), use a CDN like Cloudflare or AWS CloudFront to distribute this content globally and reduce the load on your servers.
+-iii.Asynchronous Processing : it simply means we can work independently and in parallel. In other words, we don't have to wait for task A to be 100% complete before beginning task B. This is more akin to ordering takeout.suppose, we place a complete order including a meal, drink, and dessert, and  told to pick it up in 20 minutes. we are now free to use that time as we like.
 
 
-There are some of my other works you can visit : https://github.com/aDiTyA-2712
+* There are some of my other works you can visit : https://github.com/aDiTyA-2712
