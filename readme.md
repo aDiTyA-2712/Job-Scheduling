@@ -99,9 +99,9 @@ we can scale the service by many ways such as :
 - we can implement a combination of database sharding and load balancing techniques.Database sharding involves dividing the database into smaller, independent pieces called shards, each containing a portion of the data. This allows us to scale or db horizontally by adding more shards as needed.
 
 There are lot of ways to achieve this whether individually or together.some others are :
--i.Indexing - It optimizes the database queries by creating indexes on frequently queried fields. This speeds up data retrieval.
--ii.Content Delivery Network (CDN) - if the application serves static files (like images, CSS, JS), use a CDN like Cloudflare or AWS CloudFront to distribute this content globally and reduce the load on your servers.
--iii.Asynchronous Processing : it simply means we can work independently and in parallel. In other words, we don't have to wait for task A to be 100% complete before beginning task B. This is more akin to ordering takeout.suppose, we place a complete order including a meal, drink, and dessert, and  told to pick it up in 20 minutes. we are now free to use that time as we like.
+- Indexing - It optimizes the database queries by creating indexes on frequently queried fields. This speeds up data retrieval.
+- ii.Content Delivery Network (CDN) - if the application serves static files (like images, CSS, JS), use a CDN like Cloudflare or AWS CloudFront to distribute this content globally and reduce the load on your servers.
+- Asynchronous Processing : it simply means we can work independently and in parallel. In other words, we don't have to wait for task A to be 100% complete before beginning task B. This is more akin to ordering takeout.suppose, we place a complete order including a meal, drink, and dessert, and  told to pick it up in 20 minutes. we are now free to use that time as we like.
 
 
-* There are some of my other works you can visit : https://github.com/aDiTyA-2712
+~ There are some of my other works you can visit : https://github.com/aDiTyA-2712
