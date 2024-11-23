@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'scheduler_proj.wsgi.application'
 #Setting the database in POSTGRESQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'job',
         'USER':'postgres',
         'PASSWORD':'366117',
